@@ -1,0 +1,45 @@
+<html>
+<head>
+	<title>Slid Show</title>
+	<link rel="stylesheet" type="text/css" href="css/mine.css">
+
+	<script type="text/javascript">
+	
+		var image = new Array ("imgs/img1.jpg","imgs/img2.jpg","imgs/img3.jpg");
+		var image_nam = 0;
+		var imagelength = image.length - 1;
+
+		function chaneg_image (n) {
+
+			image_nam = image_nam + n ;
+
+			if (image_nam > imagelength) {
+
+				image_nam = 0;
+			};
+
+			if (image_nam < 0) {
+
+				image_nam = imagelength;
+			};
+
+			document.slideshow.src = image[image_nam];
+
+			return false;
+		}
+	</script>
+
+</head>
+<body>
+
+	<img src="imgs/img1.jpg" name="slideshow" alt="">
+
+	<a href="javascript.html" onclick="return chaneg_image(-1)">prevease</a>
+	<a href="javascript.html" onclick="return chaneg_image(1)">Next</a>
+	
+	<div>	
+		
+	</div>
+	
+</body>
+</html>
